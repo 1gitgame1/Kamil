@@ -1215,3 +1215,19 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Футер */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    text-align: center; /* Центрируем текст */
+    color: var(--txt-light);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center; /* Центрируем текст на мобильных устройствах */
+    }
+}
