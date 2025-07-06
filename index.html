@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>«Зелёный Край» – визитка продавца овощей</title>
+
+    <!-- Иконки и шрифты -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- AOS для анимаций -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Основные стили из папки css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Дополнительные стили для новых элементов -->
+    <link rel="stylesheet" href="css/additional_styles.css">
+</head>
+<body>
+<header id="header">
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="img/logotip.png" alt="Логотип Зелёный Край" class="logo-image">
+            <span class="logo-text">Зелёный Край</span>
+            <div class="logo-pulse"></div>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#header" class="nav-link active"><i class="fas fa-home"></i>Главная</a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-star"></i>Скиллы</a></li>
+            <li><a href="#services" class="nav-link"><i class="fas fa-seedling"></i>Услуги</a></li>
+            <li><a href="#assortment" class="nav-link"><i class="fas fa-carrot"></i>Ассортимент</a></li>
+            <li><a href="#news" class="nav-link"><i class="fas fa-newspaper"></i>Новости</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i>Контакты</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- Hero-блок с жизненным кредо -->
+    <section class="hero">
+        <div class="hero-text" data-aos="fade-up">
+            <h1 class="hero-title"><span class="glitch" data-text="Алексей">Камиль</span>
+                <span class="subtitle">продавец-консультант овощного магазина</span></h1>
+            <div class="credo-block">
+                <h2 class="credo-title">Жизненное кредо</h2>
+                <p class="credo-text">«Свежие овощи – это здоровье семьи. Каждый день я выбираю лучшее для ваших близких»</p>
+            </div>
+            <div class="hero-buttons">
+                <a class="btn btn-primary" href="#assortment"><i class="fas fa-shopping-basket"></i>Ассортимент</a>
+                <a class="btn btn-secondary" href="#contact"><i class="fas fa-phone"></i>Связаться</a>
+            </div>
+        </div>
+
+        <!-- Три изображения с hover-эффектом и анимированным логотипом -->
+        <div class="vegetables-3d" data-aos="fade-left">
+            <div class="logo-animation">
+                <img src="img/logotip.png" alt="Логотип" class="animated-logo">
+            </div>
+            <div class="veg-container">
+                <div class="veg-item" data-name="Близко">
+                    <img src="img/1.png" alt="Помидоры" class="veg-image" onclick="openModal('1.png')">
+                </div>
+                <div class="veg-item" data-name="Вкусно">
+                    <img src="img/2.png" alt="Огурцы" class="veg-image" onclick="openModal('2.png')">
+                </div>
+                <div class="veg-item" data-name="Недорого">
+                    <img src="img/3.png" alt="Капуста" class="veg-image" onclick="openModal('3.png')">
+                </div>
+            </div>
+            <div class="floating-leaf leaf-1">🍃</div>
+            <div class="floating-leaf leaf-2">🌿</div>
+            <div class="floating-leaf leaf-3">🍃</div>
+        </div>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal">
+            <span class="close" onclick="closeModal()">×</span>
+            <img class="modal-content" id="modal-img">
+        </div>
+
+
+
+    </section>
+</header>
+
+<!-- Скиллы продавца-менеджера -->
+<section id="skills">
+    <h2 class="section-title"><i class="fas fa-star"></i>Мои профессиональные навыки</h2>
+    <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h3>Экспертиза в выборе</h3>
+            <p>10 лет опыта помогает мне мгновенно определить качество овощей по внешнему виду, запаху и тактильным ощущениям</p>
+            <div class="skill-level">
+                <div class="skill-bar" style="width: 99%"></div>
+            </div>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Клиентоориентированность</h3>
+            <p>Умею находить подход к каждому покупателю, запоминаю предпочтения постоянных клиентов</p>
+            <div class="skill-level">
+                <div class="skill-bar" style="width: 90%"></div>
+            </div>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-icon">
+                <i class="fas fa-calculator"></i>
+            </div>
+            <h3>Быстрый расчёт</h3>
+            <p>Моментально считаю стоимость покупки, знаю актуальные цены на весь ассортимент</p>
+            <div class="skill-level">
+                <div class="skill-bar" style="width: 80%"></div>
+            </div>
+        </div>
+
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Оперативность</h3>
+            <p>Быстро обслуживаю клиентов даже в часы пик, не снижая качества консультации</p>
+            <div class="skill-level">
+                <div class="skill-bar" style="width: 88%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section id="services">
+    <h2 class="section-title"><i class="fas fa-seedling"></i>Мои услуги</h2>
+    <div class="services-grid">
+        <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-search-plus service-icon"></i>
+            <h3>Выбор овощей</h3>
+            <p>Личные рекомендации и советы по хранению.</p>
+        </article>
+        <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-truck service-icon"></i>
+            <h3>Скидки</h3>
+            <p>Осуществляю часто скидки на определенный ассортимент товара.</p>
+        </article>
+        <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-heart service-icon"></i>
+            <h3>Индивидуальный подход</h3>
+            <p>Помню предпочтения клиентов и предлагаю сезонные новинки.</p>
+        </article>
+    </div>
+</section>
+
+<!-- Ассортимент -->
+<section id="assortment">
+    <h2 class="section-title"><i class="fas fa-carrot"></i>Ассортимент магазина</h2>
+    <div class="assortment-slider" id="assortSlider">
+        <button class="slider-btn" id="prevVeg"><i class="fas fa-chevron-left"></i></button>
+        <div class="veg-slide" id="vegSlide"></div>
+        <button class="slider-btn" id="nextVeg"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<!-- Новости -->
+<section id="news">
+    <h2 class="section-title"><i class="fas fa-newspaper"></i>Новости магазина</h2>
+    <div class="news-wrap">
+        <article class="news-card">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Скидка летом" class="news-img">
+            <div class="news-overlay">
+                <time>6 июля 2025</time>
+                <h3>Сезонная скидка до 5%</h3>
+                <p>Томаты, огурцы и капуста по спеццене.</p>
+            </div>
+        </article>
+        <ul class="news-list">
+            <li><i class="fas fa-truck-loading"></i>Свежий завоз овощей и фруктов каждое воскресение</li>
+            <li><i class="fas fa-clock"></i>Режим работы 9:00–20:00</li>
+            <li><i class="fas fa-certificate"></i>Ассортимент пополнился сладкими арбузами!</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section id="contact">
+    <h2 class="section-title"><i class="fas fa-envelope"></i>Контакты</h2>
+    <div class="contact-grid">
+        <address class="contact-info" data-aos="fade-right">
+            <p><i class="fas fa-user"></i>Камиль и Ко<br>Пос. Дербышки, ул. Мира 41А</p>
+            <p><i class="fas fa-phone"></i><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+            <p><i class="fas fa-envelope"></i><a href="mailto:alexey.vegetables@mail.ru">Kamil_vegetables@mail.ru</a></p>
+        </address>
+        <div class="whatsapp-contact">
+            <a href="https://wa.me/74951234567" class="whatsapp-link">
+                <img src="img/watsap.svg" alt="WhatsApp" class="whatsapp-icon">
+                <span>Написать в WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2025 «Зелёный Край». Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
