@@ -1,15 +1,373 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Политика конфиденциальности</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности - Зелёный Край</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4caf50;
+            --secondary: #8bc34a;
+            --bg: #0a0f0a;
+            --txt: #fff;
+            --txt-light: #c8e6c9;
+            --grad: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--grad);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .close-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 60px;
+        }
+
+        .privacy-title {
+            font: 700 2.5rem 'Orbitron', monospace;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .privacy-subtitle {
+            color: var(--txt-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .privacy-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--grad);
+        }
+
+        .section-title {
+            font: 600 1.5rem 'Orbitron', monospace;
+            color: var(--primary);
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .section-title i {
+            font-size: 1.2rem;
+        }
+
+        .privacy-text {
+            color: var(--txt-light);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .privacy-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .date-info {
+            text-align: center;
+            color: var(--txt-light);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .back-to-site {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 12px 20px;
+            background: var(--grad);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-to-site:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 15px;
+            }
+
+            .privacy-title {
+                font-size: 2rem;
+            }
+
+            .privacy-content {
+                padding: 25px;
+            }
+
+            .close-btn {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="privacy-section">
-    <h1>Политика конфиденциальности</h1>
-    <p>Мы уважаем вашу конфиденциальность и защищаем ваши данные...</p>
-    <!-- Добавьте подробности о сборе и использовании данных -->
-  </section>
+    <div class="privacy-container">
+        <button class="close-btn" onclick="window.history.back();" title="Закрыть">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <header class="privacy-header">
+            <h1 class="privacy-title">Политика конфиденциальности</h1>
+            <p class="privacy-subtitle">Сайт-визитка "Зелёный Край"</p>
+        </header>
+
+        <div class="privacy-content">
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Общие положения
+                </h2>
+                <p class="privacy-text">
+                    Настоящая политика конфиденциальности определяет порядок обработки и защиты информации пользователей сайта-визитки <span class="highlight">"Зелёный Край"</span> - персональной страницы продавца-консультанта овощного магазина.
+                </p>
+                <p class="privacy-text">
+                    Владелец сайта уважает частную жизнь посетителей и стремится обеспечить защиту персональной информации в соответствии с требованиями действующего законодательства Российской Федерации.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-database"></i>
+                    Сбор и использование информации
+                </h2>
+                <p class="privacy-text">
+                    Данный сайт является информационным ресурсом и <span class="highlight">не осуществляет сбор, хранение или обработку персональных данных пользователей</span>.
+                </p>
+                <p class="privacy-text">
+                    Сайт не использует формы для ввода персональных данных, системы регистрации, файлы cookie для отслеживания пользователей или другие технологии сбора личной информации.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-whatsapp"></i>
+                    Контактная информация
+                </h2>
+                <p class="privacy-text">
+                    Единственным способом связи, представленным на сайте, является ссылка на WhatsApp для прямого общения с продавцом-консультантом.
+                </p>
+                <div class="contact-info">
+                    <p>При переходе по ссылке WhatsApp вы будете перенаправлены во внешнее приложение, которое регулируется собственной политикой конфиденциальности WhatsApp Inc.</p>
+                </div>
+                <p class="privacy-text">
+                    Любая информация, которую вы предоставляете при общении через WhatsApp, обрабатывается в соответствии с условиями использования данного мессенджера.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Безопасность
+                </h2>
+                <p class="privacy-text">
+                    Сайт размещен на защищенном хостинге GitHub Pages и использует протокол HTTPS для обеспечения безопасного соединения.
+                </p>
+                <p class="privacy-text">
+                    Поскольку сайт не собирает персональные данные, риски утечки личной информации минимальны.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-external-link-alt"></i>
+                    Внешние ссылки
+                </h2>
+                <p class="privacy-text">
+                    Сайт может содержать ссылки на внешние ресурсы (WhatsApp, изображения). Владелец сайта не несет ответственности за политику конфиденциальности этих ресурсов.
+                </p>
+                <p class="privacy-text">
+                    Рекомендуется ознакомиться с политикой конфиденциальности внешних сервисов перед их использованием.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-edit"></i>
+                    Изменения в политике
+                </h2>
+                <p class="privacy-text">
+                    Владелец сайта оставляет за собой право изменять данную политику конфиденциальности. Все изменения будут опубликованы на этой странице.
+                </p>
+                <p class="privacy-text">
+                    Продолжение использования сайта после внесения изменений означает ваше согласие с новой версией политики.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">
+                    <i class="fas fa-phone"></i>
+                    Контакты
+                </h2>
+                <p class="privacy-text">
+                    Если у вас есть вопросы относительно данной политики конфиденциальности, вы можете связаться с владельцем сайта:
+                </p>
+                <div class="contact-info">
+                    <a href="https://wa.me/79991623645" class="whatsapp-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Написать в WhatsApp
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div class="date-info">
+            <p>Дата последнего обновления: 07 июля 2025 г.</p>
+            <p>Версия: 1.0</p>
+        </div>
+
+        <a href="index.html" class="back-to-site">
+            <i class="fas fa-arrow-left"></i>
+            Вернуться на сайт
+        </a>
+    </div>
+
+    <script>
+        // Добавляем плавную анимацию появления
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.privacy-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            container.style.transition = 'all 0.5s ease';
+
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        // Обработчик кнопки закрытия
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            const container = document.querySelector('.privacy-container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(-20px)';
+
+            setTimeout(() => {
+                if (document.referrer) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }, 300);
+        });
+
+        // Обработчик клавиши Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelector('.close-btn').click();
+            }
+        });
+    </script>
 </body>
 </html>
