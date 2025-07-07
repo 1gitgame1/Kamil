@@ -968,3 +968,23 @@ footer {
 .privacy-link:hover {
   opacity: 0.8; /* Легкое затемнение при наведении */
 }
+
+/* Заблокировать прокрутку, когда меню открыто */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Логотип не сжимается и не растягивается */
+.logo {
+    flex: 0 0 auto;
+}
+
+/* Точный контроль внутренних отступов хедера */
+@media (max-width: 768px) {
+    .main-nav {
+        padding: 15px 20px;      /* одинаковые отступы слева/справа */
+    }
+}
+
+.close-player-btn,
+.close-btn              { display: none !important; }

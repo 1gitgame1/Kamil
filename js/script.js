@@ -13,6 +13,7 @@ const navMenu = document.getElementById('navMenu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    document.body.classList.toggle('menu-open');  // <<< новая строка
 });
 
 // Закрытие меню при клике на ссылку
