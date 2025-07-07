@@ -64,7 +64,7 @@ window.addEventListener('scroll', () => {
 const vegetables = [
     {
         name: 'Капуста белокочанная',
-        desc: 'Сочная и хрустящая, идеальна для салатов',
+        desc: 'Вкусная и идеальная для салатов',
         img: 'img/капуста.jpeg'
     },
     {
