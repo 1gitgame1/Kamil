@@ -30,12 +30,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .image-container {
-            position: relative;
             max-width: 90vw;
             max-height: 90vh;
             padding: 20px;
@@ -97,28 +94,6 @@
             line-height: 1.6;
         }
 
-        .back-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 30px;
-            background: var(--grad);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .back-btn:hover {
-            transform: translateX(-50%) translateY(-5px);
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -151,15 +126,8 @@
                 height: 45px;
                 font-size: 20px;
             }
-
-            .back-btn {
-                bottom: 20px;
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
         }
 
-        /* Очень маленькие экраны */
         @media (max-width: 480px) {
             .image-title {
                 font-size: 1.5rem;
@@ -194,20 +162,13 @@
         <img src="img/1.png" alt="Магазин Фото 1" class="main-image">
 
         <p class="image-description">Зеленый край — тут и свежесть, и уют. Овощи, фрукты — для всех вас тут ждут!</p>
-
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-            Вернуться на главную
-        </a>
     </div>
 
     <script>
         function closeImage() {
-            // Анимация исчезновения
             document.querySelector('.image-container').style.animation = 'fadeOut 0.3s ease-in-out';
 
             setTimeout(() => {
-                // Возврат на главную страницу
                 if (document.referrer && document.referrer.includes('index.html')) {
                     window.history.back();
                 } else {
@@ -216,14 +177,12 @@
             }, 300);
         }
 
-        // Закрытие по клавише Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeImage();
             }
         });
 
-        // Добавляем стиль для анимации исчезновения
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeOut {
