@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <!-- Основные стили из папки css -->
+    <!-- Основные стили из папки css -->=
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Дополнительные стили для новых элементов -->
-    <link rel="stylesheet" href="css/additional_styles.css">
+    <link rel="stylesheet" href="css/media.css">
+
 </head>
 <body>
 <header id="header">
@@ -59,24 +60,19 @@
                 <img src="img/logotip.png" alt="Логотип" class="animated-logo">
             </div>
             <div class="veg-container">
-                <div class="veg-item" data-name="Близко">
-                    <img src="img/1.png" alt="Помидоры" class="veg-image" onclick="openModal('1.png')">
-                </div>
-                <div class="veg-item" data-name="Вкусно">
-                    <img src="img/2.png" alt="Огурцы" class="veg-image" onclick="openModal('2.png')">
-                </div>
-                <div class="veg-item" data-name="Недорого">
-                    <img src="img/3.png" alt="Капуста" class="veg-image" onclick="openModal('3.png')">
-                </div>
+                <a href="image1.html" aria-label="Магазин 1">
+                    <img src="img/1.png" alt="Магазин 1" class="veg-image">
+                </a>
+                <a href="image2.html" aria-label=" Магазин 2">
+                    <img src="img/2.png" alt="Магазин 2" class="veg-image">
+                </a>
+                <a href="image3.html" aria-label=" Магазин 3">
+                    <img src="img/3.png" alt="Магазин 3" class="veg-image">
+                </a>
             </div>
             <div class="floating-leaf leaf-1">🍃</div>
             <div class="floating-leaf leaf-2">🌿</div>
             <div class="floating-leaf leaf-3">🍃</div>
-        </div>
-
-        <!-- Модальное окно -->
-        <div id="modal" class="modal">
-            <img class="modal-content" id="modal-img">
         </div>
 
 

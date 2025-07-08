@@ -24,19 +24,27 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Плавный скролл
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+
+// плавно прокручиваем с учётом 70-пиксельного меню
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+
+        const headerOffset = 70;             // высота .main-nav
+        const elementPos  = target.getBoundingClientRect().top;
+        const offsetPos   = elementPos + window.pageYOffset - headerOffset;
+
+        window.scrollTo({ top: offsetPos, behavior: 'smooth' });
+
+        // закрыть мобильное меню
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
     });
 });
+
 
 // Активная ссылка в навигации
 window.addEventListener('scroll', () => {
@@ -103,25 +111,7 @@ function prevVegetable() {
     renderVegetable();
 }
 
-function openModal(imgSrc) {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modal.style.display = 'block';
-    modalImg.src = 'img/' + imgSrc;
-}
 
-function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = 'none';
-}
-
-// Закрытие модального окна при клике вне изображения
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
 
 // Инициализация слайдера
 renderVegetable();
